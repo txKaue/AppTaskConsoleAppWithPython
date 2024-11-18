@@ -19,6 +19,6 @@ The Tasks can be listed, concluded, excluded or filtered by status.
     * testes.py: This file contains testing algorithms to facilitate development (In portuguese "Testes" means "tests");
     * main.py: This is the main file of the application. You may run this file to use the app.
 
-## For why reason i do this app?
+## For why reason i did this app?
 
 This app was made to complete an exercise to the Software Engenering class. The objective was learn about software tests and algotithms facilitate that process. 
