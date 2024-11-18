@@ -3,10 +3,13 @@ from classes.Funcionario import *
 from classes.ListaFuncionario import *
 from classes.ListaTarefa import *
 from classes.Utils import Utils as ut
+from classes.RelatorioDeDesempenho import RelatorioDeDesempenho  
+
+# Instancia a classe de Desempenho
+desempenho = RelatorioDeDesempenho()
 
 def criar_funcionarios(listaFunc):
     print("\n** Criando Funcionários **")
-
     funcionarios = [
         Funcionario("F001", "João Silva", "Desenvolvimento"),
         Funcionario("F002", "Maria Oliveira", "Marketing"),
@@ -24,6 +27,7 @@ def listar_funcionarios(listaFunc):
         print(funcionario)
 
 
+@desempenho.medir_desempenho  
 def criar_tarefas(lista, listaFunc):
     print("\n** Criando Tarefas **")
 
@@ -38,12 +42,14 @@ def criar_tarefas(lista, listaFunc):
         lista.AddTarefa(tarefa)
 
 
+@desempenho.medir_desempenho  
 def listar_tarefas(lista):
     print("\n** Lista de Tarefas **")
     for tarefa in lista.itens:
         print(tarefa)
 
 
+@desempenho.medir_desempenho  
 def concluir_metade_tarefas(lista):
     print("\n** Concluindo Metade das Tarefas **")
     for i, tarefa in enumerate(lista.itens):
@@ -51,6 +57,7 @@ def concluir_metade_tarefas(lista):
             tarefa.Concluir(tarefa.GetId())
 
 
+@desempenho.medir_desempenho  
 def listar_tarefas_concluidas(lista):
     print("\n** Lista de Tarefas Concluídas **")
     for tarefa in lista.itens:
@@ -58,43 +65,47 @@ def listar_tarefas_concluidas(lista):
             print(tarefa)
 
 
+@desempenho.medir_desempenho  
 def listar_tarefas_pendentes(lista):
     print("\n** Lista de Tarefas Pendentes **")
     for tarefa in lista.itens:
-        if not tarefa.GetStatus(): 
+        if not tarefa.GetStatus():  
             print(tarefa)
 
 
+@desempenho.medir_desempenho  
 def excluir_tarefas(lista):
     print("\n** Excluindo Todas as Tarefas **")
     for tarefa in lista.itens:
         lista.RemoveTarefa(tarefa.GetId())  
-    
-   
+
     print("Lista de tarefas após remoção:")
     for tarefa in lista.itens:
         print(tarefa)
 
 
 def rodar_testes():
-    lista = ListaTarefa()  
+    lista = ListaTarefa() 
     listaFunc = ListaFuncionario()  
 
-    criar_funcionarios(listaFunc)
+    criar_funcionarios(listaFunc)  
+    listar_funcionarios(listaFunc)  
     
-    listar_funcionarios(listaFunc)
+    criar_tarefas(lista, listaFunc)  
+    listar_tarefas(lista)  
     
-    criar_tarefas(lista, listaFunc)
-
-    listar_tarefas(lista)
+    concluir_metade_tarefas(lista)  
+    listar_tarefas_concluidas(lista)  
     
-    concluir_metade_tarefas(lista)
+    listar_tarefas_pendentes(lista) 
     
-    listar_tarefas_concluidas(lista)
-    
-    listar_tarefas_pendentes(lista)
-    
-    excluir_tarefas(lista)
+    excluir_tarefas(lista) 
 
 
-rodar_testes()
+if __name__ == "__main__":
+
+    with open('desempenho_teste.txt', 'w') as log_file:
+        log_file.write("Resultados dos Testes de Desempenho\n")
+        log_file.write("==============================\n\n")
+
+    rodar_testes() 

@@ -1,0 +1,27 @@
+Resultados dos Testes de Desempenho
+==============================
+
+Função: criar_tarefas
+Tempo de Execução: 0.208807 segundos
+Uso de Memória: 2.50 MiB
+
+Função: listar_tarefas
+Tempo de Execução: 1.407077 segundos
+Uso de Memória: 0.00 MiB
+
+Função: concluir_metade_tarefas
+Tempo de Execução: 0.201619 segundos
+Uso de Memória: 0.00 MiB
+
+Função: listar_tarefas_concluidas
+Tempo de Execução: 0.685184 segundos
+Uso de Memória: 0.00 MiB
+
+Função: listar_tarefas_pendentes
+Tempo de Execução: 0.701674 segundos
+Uso de Memória: 0.00 MiB
+
+Função: excluir_tarefas
+Tempo de Execução: 2.831185 segundos
+Uso de Memória: 0.00 MiB
+
