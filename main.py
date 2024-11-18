@@ -64,6 +64,7 @@ while (True):
                     print(i)
                     
         case 9:
+            print("Obrigado por usar o app.")
             break
         case _:
             print("")

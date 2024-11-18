@@ -16,6 +16,6 @@ class ListaTarefa:
             if (i.GetId() == tarefa):
                 self.itens.pop(self.itens.index(i))
                 
-        print("Não foi possível encontrar a tarefa")
+
 
     
