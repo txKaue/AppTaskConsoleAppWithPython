@@ -12,6 +12,7 @@ The Tasks can be listed, concluded, excluded or filtered by status.
     * Funcionario.py: This file contains the object who represent and employee (In portuguese "Funcionario" means "Employee");
     * ListaFuncionario.py: This file constains the object who represents the employee list;
     * ListaTarefa.py: This file contains the object who represents the task list;
+    * RelatorioDeDesempenho.py: This file contains a class create a log to perfomance test (In portuguese "Relatorio de desempenhos" means "Performance report"). 
     * Tarefa.py: This file contains the object who represenst a taks (In portuguese "Tarefa" means "Task");
     * Utils.py: This file constains some functiona to facilitat and organize the program;
 
